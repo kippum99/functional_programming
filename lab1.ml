@@ -88,5 +88,164 @@ b <= 0, which is equivalent to adding the absolute value of b to a.
 
 
 (* B.1 *)
+(*
+With applicative-order evaluation, Ben will observe an infinite loop
+because the function arguments 0 and p () are evaluated before the
+function is called, and the recursion function p () has no terminating
+condition. With normal-order evaluation, he will get 0 as a result
+because the function test 0 (p ()) returns 0 as soon as it evaluates
+0 = 0 to be true.
+*)
+
+
+(* B.2 *)
+(*
+The sqrt_iter function will enter an infinite loop, because the function
+arguments of new_if are evaluated before the function is called, so 
+whether the predicate (is_good_enough guess x) is true or false
+the else clause (sqrt_iter (improve guess x) x) will always be
+evaluated. Thus sqrt_iter will keep calling itself without a terminating
+condition.
+*)
+
+
+(* B.3 *)
+(*
+Evaluate: add_a 2 5
+    evaluate 2 -> 2
+    evaluate 5 -> 5
+    evaluate add_a -> desugar to:
+        fun a b -> ...
+    apply fun a b -> ... to 2, 5
+        substitute 2 for a, 5 for b in body:
+            if 2 = 0 then 5 else inc (add_a (dec 2) 5)
+        evaluate if 2 = 0 then 5 else inc (add_a (dec 2) 5)
+			*special form rule for if: evaluate predicate first
+            evaluate 2 = 0
+                evaluate 2 -> 2
+                evaluate 0 -> 0
+                evaluate = -> =
+                apply = to 2, 0 -> false
+            * special form rule for if: since predicate is false, replace with false clause:
+            evaluate inc (add_a (dec 2) 5)
+                evaluate add_a (dec 2) 5
+                    evaluate dec 2
+                        evaluate 2 -> 2
+                        evaluate dec -> dec
+                        apply dec to 2 -> 1
+                    evaluate 5 -> 5
+                    evaluate add_a -> desugar to:
+                        fun a b -> ...
+                    apply fun a b -> ... to 1, 5
+                        substitute 1 for a, 5 for b in body:
+                            if 1 = 0 then 5 else inc (add_a (dec 1) 5)
+                        evaluate if 1 = 0 then 5 else inc (add_a (dec 1) 5)
+							*special form rule for if: evaluate predicate first
+                            evaluate 1 = 0
+                                evaluate 2 -> 2
+                                evaluate 0 -> 0
+                                evaluate = -> =
+                                apply = to 2, 0 -> false
+                            * special form rule for if: since predicate is false, replace with false clause:
+                            evaluate inc (add_a (dec 1) 5)
+                                evaluate add_a (dec 1) 5
+                                    evaluate dec 1
+                                        evaluate 1 -> 1
+                                        evaluate dec -> dec
+                                        apply dec to 1 -> 0
+                                    evaluate 5 -> 5
+                                    evaluate add_a -> desugar to:
+                                        fun a b -> ...
+                                    apply fun a b -> ... to 0, 5
+                                        substitute 0 for a, 5 for b in body:
+                                            if 0 = 0 then 5 else inc (add_a (dec 0) 5)
+                                        evaluate if 0 = 0 then 5 else inc (add_a (dec 0) 5)
+                                            *special form rule for if: evaluate predicate first
+                                            evaluate 0 = 0
+                                                evaluate 0 -> 0
+                                                evaluate 0 -> 0
+                                                evaluate = -> 0
+                                                apply = to 0, 0 -> true
+                                            * special form rule for if: since predicate is true, replace with true clause:
+                                            evaluate 5 -> 5
+                                evaluate inc -> inc
+                                apply inc to 5 -> 6
+				evaluate inc -> inc
+				apply inc to 6 -> 7
+	Result: 7
+	
+Evaluate: add_b 2 5
+	evaluate 2 -> 2
+	evaluate 5 -> 5
+	evaluate add_b -> desugar to:
+		fun a b -> ...
+	apply fun a b -> ... to 2, 5
+		substitute 2 for a, 5 for b in body:
+			if 2 = 0 then 5 else add_b (dec 2) (inc 5)
+		evaluate if 2 = 0 then 5 else add_b (dec 2) (inc 5)
+			*special form rule for if: evaluate predicate first
+			evaluate 2 = 0
+				evaluate 2 -> 2
+				evaluate 0 -> 0
+				evaluate = -> =
+				apply = to 2, 0 -> false
+			*special form rule for if: since predicate is false, replace with false clause:
+			evaluate add_b (dec 2) (inc 5)
+				evaluate dec 2
+					evaluate 2 -> 2
+					evaluate dec -> dec
+					apply dec to 2 -> 1
+				evaluate inc 5
+					evaluate 5 -> 5
+					evaluate inc -> inc
+					apply inc to 5 -> 6
+				evaluate add_b -> desugar to:
+					fun a b -> ...
+				apply fun a b -> ... to 1, 6
+					substitute 1 for a, 6 for b in body:
+						if 1 = 0 then 6 else add_b (dec 1) (inc 6)
+					evaluate if 1 = 0 then 6 else add_b (dec 1) (inc 6)
+						*special form rule for if: evaluate predicate first
+						evaluate 1 = 0
+							evaluate 1 -> 1
+							evaluate 0 -> 0
+							evaluate = -> =
+							apply = to 1, 0 -> false
+						*special form rule for if: since predicate is false, replace with false clause:
+						evaluate add_b (dec 1) (inc 6)
+							evaluate dec 1
+								evaluate 1 -> 1
+								evaluate dec -> dec
+								apply dec to 1 -> 0
+							evaluate inc 6
+								evaluate 6 -> 6
+								evaluate inc -> inc
+								apply inc to 6 -> 7
+							evaluate add_b -> desugar to:
+								fun a b -> ...
+							apply fun a b -> ... to 0, 7
+								substitute 0 for a, 7 for b in body:
+									if 0 = 0 then 7 else add_b (dec 0) (inc 7)
+								evaluate if 0 = 0 then 7 else add_b (dec 0) (inc 7)
+								*special form rule for if: evaluate predicate first
+								evaluate 0 = 0
+									evaluate 0 -> 0
+									evaluate 0 -> 0
+									evaluate = -> =
+									apply = to 0, 0 -> true
+								*special form rule for if: since predicate is true, replace with true clause:
+								evaluate 7 -> 7
+	Result: 7
+	
+add_a is recursive, while add_b is iterative (due to tail recursion optimization).
+                                    
+*)
+
+
+(* C.1 *)
+
+
+
+
 
 
