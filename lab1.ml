@@ -267,8 +267,8 @@ e_approximation 20 gives 2.71828182845904553, and exp 1.0 gives
 
 (* C.1.d *)
 (*
-It returns infinity because the recursion stack gets too large
-(computing it would take 101 stacks).
+It returns infinity because large factorial values result in integer
+overflow, which defaults to 0 and sets the e_term values to infinity.
 *)
 
 
