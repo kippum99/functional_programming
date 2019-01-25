@@ -244,8 +244,64 @@ add_a is recursive, while add_b is iterative (due to tail recursion optimization
 
 (* C.1 *)
 
+(* This function computes the factorial of the input number,
+ which for a number n is equal to n * (n-1) * ... * 1. *)
+let rec factorial n =
+	if n = 0 then 1 else n * factorial (n - 1)
+	
+(* C.1.a *)
+let e_term i = 
+	1. /. float_of_int (factorial i)
+
+(* C.1.b *)
+let rec e_approximation n =
+	if n = 0
+		then e_term 0
+		else e_term n +. e_approximation (n - 1)
+
+(* C.1.c *)
+(*
+e_approximation 20 gives 2.71828182845904553, and exp 1.0 gives
+2.71828182845904509, which are the same up to the e-15 digit.
+*)
+
+(* C.1.d *)
+(*
+It returns infinity because the recursion stack gets too large
+(computing it would take 101 stacks).
+*)
 
 
+(* C.2 *)
+let rec is_even n =
+	if n = 0 then true else is_odd (n - 1)
+and is_odd n =
+	if n = 0 then false else is_even (n - 1)
 
 
+(* C.3 *)
+let rec f_rec n = 
+	if n < 3
+		then n
+		else f_rec (n - 1) + 2 * f_rec (n - 2) + 3 * f_rec (n - 3)
+
+let f_iter n =
+	let rec iter a b c cnt n =
+		if cnt > n
+			then a
+			else iter (a + 2 * b + 3 * c) a b (cnt + 1) n
+	in
+		if n < 3
+			then n
+			else iter 2 1 0 3 n
+
+
+(* C.4 *)
+let rec pascal_coefficient i j =
+	match (i, j) with
+		| (i', j') when i' < 1 || j' < 1 -> failwith "invalid arguments"
+		| (i', j') when j' > i' -> failwith "invalid arguents"
+		| (i', j') when j' = i' -> 1
+		| (_, 1) -> 1
+		| (_, _) -> pascal_coefficient (i - 1) (j - 1) + pascal_coefficient (i - 1) j
 
