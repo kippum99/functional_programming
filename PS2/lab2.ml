@@ -258,3 +258,27 @@ let nsmoothed dx f n =
 
 
 (* D.1 *)
+let is_prime n =
+	let sqrt_n = int_of_float (sqrt (float_of_int n)) in
+	let rec iter i = 
+		if i > sqrt_n
+			then true
+			else if n mod i = 0
+				then false
+				else iter (i + 1)
+	in
+		if n < 2
+			then false
+			else iter 2
+
+
+(* D.2 *)
+let smallest_prime_factor n =
+	let rec iter i =
+		if n mod i = 0 && is_prime i
+			then i
+			else iter (i + 1)
+	in
+		if is_prime n
+			then invalid_arg "The argument is prime"
+			else iter 2
