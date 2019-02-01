@@ -1,3 +1,6 @@
+open Num
+
+
 (* A.1 *)
 (*
 The space compexity for this function is O(n). It is different from the
@@ -115,5 +118,50 @@ d.
 
 
 (* B.2 *)
+(*
+
+Desugar:
+-> (fun x y -> let y = 14 in let z = 22 in x * y * z) (2 * 10) (3 + 4)
+-> (fun x y -> (fun y -> let z = 22 in x * y * z) 14) (2 * 10) (3 + 4)
+-> (fun x y -> (fun y -> (fun z -> x * y * z) 22) 14) (2 * 10) (3 + 4)
+Evaluate fun x y -> ...
+  evaluate (2 * 10) -> 20
+  evaluate (3 + 4) -> 7
+  apply fun x y -> ... to 20, 7
+    substitute 20 for x, 7 for y in body (y shielded)
+    -> (fun y -> (fun z -> 20 * y * z) 22) 14
+    evaluate:
+      apply fun y -> ... to 14
+        substitute 14 for y in body
+        -> (fun z -> 20 * 14 * z) 22
+        evaluate:
+          apply fun z -> ... to 22
+            substitute 22 for z in body
+            -> 20 * 14 * 22
+            evaluate 20 * 14 * 22 -> 6160
+  Result: 6160
+
+*)
 
 
+(* B.3 *)
+(*
+
+Desugared:
+(fun x y z -> x + y + z) 10 (x * 2) (y + 3)
+
+Ben's code doesn't work because all the operands 10, (x * 2), and
+(y + 3) are first evaluated then x, y, and z are bound to these
+expressions for evaluating the function body. When (x * 2) is being
+evaluated, x hasn't been bound to 10 yet. Using nested lets would fix
+this problem:
+
+let x = 10 in
+let y = x * 10 in
+let z = y + 3 in
+	x + y + z
+
+*)
+
+
+(* C.1 *)
