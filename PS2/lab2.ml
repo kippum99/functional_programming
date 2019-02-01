@@ -1,5 +1,7 @@
 open Num
 
+let ni = num_of_int
+
 
 (* A.1 *)
 (*
@@ -165,3 +167,94 @@ let z = y + 3 in
 
 
 (* C.1 *)
+let isum term a next b = 
+	let rec iter a result =
+		if a >/ b
+			then result
+			else iter (next a) (result +/ (term a))
+	in
+		iter a (ni 0)
+
+
+(* C.2 *)
+let rec product_rec term a next b =
+	if a >/ b
+		then (ni 1)
+		else term a */ (product_rec term (next a) next b)
+		
+let factorial_rec n =
+	let step1 m = m +/ (ni 1) in
+		if n <=/ (ni 1)
+			then (ni 1)
+			else product_rec (fun m -> m) (ni 1) step1 n
+			
+let pi_product n =
+	let term_num m = m +/ (ni 2) -/ (mod_num m (ni 2)) in
+	let term_den m = m +/ (ni 2) -/ (mod_num (m +/ (ni 1)) (ni 2)) in
+	let skip1 m = m +/ (ni 1) in
+	let num = product_rec term_num (ni 1) skip1 n in
+	let den = product_rec term_den (ni 1) skip1 n in
+		(ni 4) */ num // den
+
+let pi_approx = float_of_num (pi_product (ni 5000))
+
+let product_iter term a next b =
+	let rec iter a result =
+		if a >/ b
+			then result
+			else iter (next a) (result */ (term a))
+	in
+		iter a (ni 1)
+
+let factorial_iter n =
+	let step1 m = m +/ (ni 1) in
+		if n <=/ (ni 1)
+			then (ni 1)
+			else product_iter (fun m -> m) (ni 1) step1 n	
+
+
+(* C.3 *)
+let rec accumulate_rec combiner null_value term a next b =
+	if a >/ b
+		then null_value
+		else combiner (term a) 
+			(accumulate_rec combiner null_value term (next a) next b)
+			
+let accumulate_iter combiner null_value term a next b =
+	let rec iter a result =
+		if a >/ b
+			then result
+			else iter (next a) (combiner result (term a))
+	in
+		iter a null_value
+
+let sum term a next b =
+	accumulate_iter (+/) (ni 0) term a next b
+
+let product term a next b =
+	accumulate_iter ( */ ) (ni 1) term a next b
+
+
+(* C.4 *)
+let compose f g =
+	fun x -> f (g x)
+	
+	
+(* C.5 *)
+let rec repeated f n =
+	if n = 0
+		then fun x -> x
+		else compose f (repeated f (n - 1))
+
+
+(* C.6 *)
+let smooth dx f =
+	fun x -> (f (x -. dx) +. f x +. f (x +. dx)) /. 3.0
+
+
+(* C.7 *)
+let nsmoothed dx f n =
+	(repeated (smooth dx) n) f
+
+
+(* D.1 *)
