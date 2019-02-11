@@ -19,7 +19,7 @@ let segment_length { startp; endp } =
 	let leny = abs_float (endp.y -. startp.y) in
 		sqrt (lenx *. lenx +. leny *. leny)
 
-let print_post { x; y} =
+let print_point { x; y} =
 	Printf.printf "(%g, %g)" x y
 
 
@@ -75,7 +75,7 @@ let rectangle_perimeter r =
 		+. (segment_length (rectangle_left_segment r))
 		+. (segment_length (rectangle_right_segment r))
 
-let rectangle_perimiter2 r =
+let rectangle_perimeter2 r =
 	(segment_length (rectangle_lower_segment2 r))
 		+. (segment_length (rectangle_upper_segment2 r))
 		+. (segment_length (rectangle_left_segment2 r))
@@ -153,7 +153,7 @@ let int_log base n =
 	in
 		iter base n 0
 
-let make_pairi a b = (pow 2 a) + (pow 3 b)
+let make_pairi a b = (pow 2 a) * (pow 3 b)
 	
 let firsti pair = int_log 2 pair
 
@@ -260,7 +260,106 @@ as well.
 
 *)
 
+
 (* B.1 *)
+let rec last_sublist = function
+	| [] -> invalid_arg "last_sublist: empty list"
+	| [i] -> [i]
+	| _ :: t -> last_sublist t
 
 
+(* B.2 *)
+let reverse lst =
+	let rec iter orig rev =
+		match orig with
+			| [] -> rev
+			| h :: t -> iter t (h :: rev) 
+	in
+		iter lst []
 
+
+(* B.3 *)
+let rec square_list = function
+	| [] -> []
+	| h :: t -> (h * h) :: square_list t
+
+let square_list2 items = List.map (fun i -> i * i) items
+
+
+(* B.4 *)
+(*
+
+The answer list is in the reverse order because he processes the list
+from the beginning, squaring each item, and consing it to the beginning
+of the answer list, resulting in the last element of the list at the
+beginning of the answer list.
+
+Intechanging the arguments to the :: constructor doesn't work because
+the left operand of :: has to be an element of the list, and the right
+operand has to be a list. (h * h) is not of type list.
+
+We can change (answer :: (h * h)) to (answer @ [h * h]), but the
+resulting function would not be efficient because the @ operator is
+not tail-recursive.
+
+*)
+
+
+(* B.5 *)
+let rec count_negative_numbers = function
+	| [] -> 0
+	| h :: t -> 
+		if h < 0 
+			then 1 + count_negative_numbers t
+			else count_negative_numbers t
+
+let power_of_two_list n =
+	let rec iter i =
+		if i = n
+			then []
+			else (pow 2 i) :: (iter (i + 1))
+	in
+		iter 0
+		
+let prefix_sum lst =
+	let rec iter add cur =
+		match cur with
+			| [] -> []
+			| h :: t -> 
+				let h' = h + add in
+					h' :: iter h' t
+	in
+		iter 0 lst
+		
+		
+(* B.6 *)
+let deep_reverse lst =
+	let rec shallow_reverse orig' rev' =
+		match orig' with
+			| [] -> rev'
+			| h :: t -> shallow_reverse t (h :: rev')
+	in
+	let rec iter orig rev =
+		match orig with
+			| [] -> rev
+			| h :: t -> iter t ((shallow_reverse h []) :: rev) 
+	in
+		iter lst []
+
+
+(* B.7 *)
+
+type 'a nested_list = Value of 'a | List of 'a nested_list list
+
+let rec deep_reverse_nested lst =
+	let rec iter orig rev =
+		match orig with
+			| [] -> rev
+			| h :: t -> iter t ((deep_reverse_nested h) :: rev)
+	in
+	let reverse_list l' =
+		iter l' []
+	in
+		match lst with
+			| Value i -> Value i
+			| List l -> List (reverse_list l) 
