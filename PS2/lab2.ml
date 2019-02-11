@@ -279,6 +279,7 @@ let smallest_prime_factor n =
 			then i
 			else iter (i + 1)
 	in
-		if is_prime n
-			then invalid_arg "The argument is prime"
+		if is_prime n || n < 2
+			then invalid_arg 
+				"Argument should be a composite number greater than 2"
 			else iter 2
