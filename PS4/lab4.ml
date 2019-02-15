@@ -181,3 +181,55 @@ let matrix_times_matrix m n =
 		
 
 (* B.1 *)
+let rec quicksort lst cmp =
+	match lst with
+		| [] -> []
+		| h :: t -> 
+			let sm = List.filter (fun n -> cmp n h) t in
+			let lg = List.filter (fun n -> not (cmp n h)) t in
+				(quicksort sm cmp) @ (h :: (quicksort lg cmp))
+
+
+(* B.2 *)
+(*
+The quicksort function uses generative recursion, as it generates parts
+from the original list (list of elements smaller than the pivot and list
+of elements equal to or larger than the pivot), recurses on each of
+these, and combines results to construct the final result, rather than
+recursing on the natural sub-part of list (rest) and combining with
+first element.
+*)
+
+
+(* B.3 *)
+(*
+If the function merge_sort doesn't check for lists of length 1, when the
+list has length 1 the function will split the list into eh = [] and
+oh = itself, and merge_sort each half. When merge_sort oh cmp is called,
+the function merge_sort will once again break oh into two parts ([] and
+itself) and try to merge_sort each part, causing the function to enter
+an infinite loop.
+*)
+
+
+(* B.4 *)
+let rec insert_in_order new_result a_list cmp = 
+	match a_list with 
+		| [] -> [new_result]  
+		| h :: t when cmp new_result h -> new_result :: a_list
+		| h :: t ->  h :: insert_in_order new_result t cmp
+
+let rec insertion_sort a_list cmp =
+	match a_list with
+		| [] -> []
+		| h :: t -> insert_in_order h (insertion_sort t cmp) cmp
+
+(* 
+This represents structural recursion, as the function recurses on
+"natural" subparts of data; the function insertion_sort recurses on tail
+and combines the result with the head using insert_in_order, without
+generating any new subparts to recurse on.
+*)
+
+
+(* C *)
