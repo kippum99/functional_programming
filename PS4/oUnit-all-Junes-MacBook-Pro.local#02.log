@@ -1,0 +1,23 @@
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Start test all:1:Problem A.2.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Test all:1:Problem A.2 has failed.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: not equal in test all:1:Problem A.2.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Called from unknown location
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Called from unknown location
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: 
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: End test all:1:Problem A.2.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Start test all:3:Problem A.4.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Test all:3:Problem A.4 is successful.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: End test all:3:Problem A.4.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Start test all:5:Problem A.6.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Test all:5:Problem A.6 is successful.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: End test all:5:Problem A.6.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Start test all:7:Problem B.1.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Test all:7:Problem B.1 is successful.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: End test all:7:Problem B.1.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: Start test all:9:Problem C.1.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Test all:9:Problem C.1 has failed.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: not equal in test all:9:Problem C.1.
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Called from unknown location
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: Called from unknown location
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 E: 
+2019-02-15T08:14:50+00:00 Junes-MacBook-Pro.local#02 I: End test all:9:Problem C.1.

@@ -111,7 +111,7 @@ let rec square_tree' (Tree lst) =
 (* A.3 *)
 let rec tree_map f (Tree lst) =
 	let f_elem = function
-		| Num i -> f i
+		| Num i -> Num (f i)
 		| Sub tr -> Sub (tree_map f tr)
 	in Tree (List.map f_elem lst)
 
@@ -232,4 +232,46 @@ generating any new subparts to recurse on.
 *)
 
 
-(* C *)
+(* C.1 *)
+type expr =
+	| Int of int
+	| Var of string
+	| Add of expr * expr
+	| Mul of expr * expr
+	| Pow of expr * int
+	
+let rec simplify1 expr =
+	let rec pow a b =
+		if b = 0
+			then 1
+			else a * (pow a (b - 1))
+	in
+		match expr with
+			| Int _ 
+			| Var _ -> expr
+			| Add (Int i, Int j) -> Int (i + j)
+			| Mul (Int i, Int j) -> Int (i * j)
+			| Pow (Int i, j) -> Int (pow i j)
+			| Add (Int 0, e)
+			| Add (e, Int 0) 
+			| Mul (Int 1, e)
+			| Mul (e, Int 1)
+			| Pow (e, 1) -> e
+			| Mul (Int 0, _) 
+			| Mul (_, Int 0) -> Int 0
+			| Pow (e, 0) -> Int 1
+			| Add (e1, e2)
+			| Mul (e1, e2) -> Add (simplify1 e1, simplify1 e2)
+			| Pow (e, i) -> Pow (simplify1 e, i)
+
+
+(* C.2 *)
+let rec deriv expr var = 
+	match expr with
+		| Int _ -> Int 0
+		| Var v when v = var -> Int 1
+		| Var _ -> Int 0
+		| Add (e1, e2) -> Add (deriv e1 var, deriv e2 var)
+		| Mul (e1, e2) -> 
+			Add ((Mul (deriv e1 var, e2)), (Mul (e1, deriv e2 var)))
+		| Pow (e, n) -> Mul (Int n, Mul (Pow (e, n - 1), deriv e var))
