@@ -89,4 +89,95 @@ let rec is_balanced' m =
 
 
 (* A.2 *)
+type tree = Tree of elem list
+and elem = Num of int | Sub of tree
 
+let rec square_tree (Tree lst) =
+	let square_list = function
+		| [] -> []
+		| (Num i) :: t -> (Num (i * i)) :: t
+		| (Sub tr) :: t -> (Sub (square_tree tr)) :: t
+	in
+		Tree (square_list lst)
+
+let rec square_tree' (Tree lst) =
+	let square_elem = function
+		| Num i -> Num (i * i)
+		| Sub tr -> Sub (square_tree' tr)
+	in
+		Tree (List.map square_elem lst)
+
+
+(* A.3 *)
+let rec tree_map f (Tree lst) =
+	let f_elem = function
+		| Num i -> f i
+		| Sub tr -> Sub (tree_map f tr)
+	in Tree (List.map f_elem lst)
+
+
+(* A.4 *)
+let rec subsets = function
+	| [] -> [[]]
+	| h :: t -> let rest = subsets t in
+		rest @ (List.map (fun l -> h :: l) rest)
+(*
+The base case [] returns [[]], since the empty set only has itself as
+its subset. If a set has one element i, it has the empty set [] and
+itself as its subsets, and we can get a list of these items by combining
+the subset of [] and i added to the subset of [], which is 
+[] @ (i :: []). By inductive reasoning, this works for sets with more
+than one element. For example, if we have a set [1; 2; 3], then we can
+get its subsets by considering all subsets of the set [2; 3] (rest), and
+the only new subsets that we have to consider are the subsets of set
+[2; 3] with 1 added, which is (List.map (fun l -> h :: l) rest).
+*)
+
+
+(* A.5 *)
+let rec accumulate op initial sequence = 
+	match sequence with
+		| [] -> initial
+		| h :: t -> op h (accumulate op initial t)
+		
+let map p sequence =
+	accumulate (fun x r -> (p x) :: r) [] sequence
+
+let append seq1 seq2 = 
+	accumulate (fun x r -> x :: r) seq2 seq1
+	
+let length sequence =
+	accumulate (fun x r -> 1 + r) 0 sequence
+	
+	
+(* A.6 *)
+let rec accumulate_n op init seqs =
+	match seqs with
+		| [] -> failwith "empty list"
+		| [] :: _ -> []   (* assume all sequences are empty *)
+		| h :: t -> accumulate op init (List.hd h :: map List.hd t)
+			:: accumulate_n op init (List.tl h :: map List.tl t)
+
+
+(* A.7 *)
+
+let rec map2 f x y =
+	match (x, y) with
+		| ([], []) -> []
+		| ([], _) -> failwith "unequal lists"
+		| (_, []) -> failwith "unequal lists"
+		| ((xh :: xt), (yh :: yt)) ->
+			f xh yh :: map2 f xt yt
+			
+let dot_product v w = accumulate (+) 0 (map2 ( * ) v w)
+
+let matrix_times_vector m v = map (dot_product v) m
+
+let transpose mat = accumulate_n (fun x r -> x :: r) [] mat
+
+let matrix_times_matrix m n =
+	let cols = transpose n in
+		map (matrix_times_vector cols) m
+		
+
+(* B.1 *)
