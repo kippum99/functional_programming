@@ -209,4 +209,48 @@ let insertion_sort_i lst =
 		iter ([], lst)
 
 
-(*
+(* 4.1 *)
+type tree = 
+	| Leaf 
+	| Node of int * int * tree * tree
+	
+let rec member i tr =
+	match tr with
+		| Leaf -> false
+		| Node (lvl, v, l, r) ->
+			if i = v then
+				true
+			else 
+				if i < v then
+					member i l
+				else member i r
+				
+				
+(* 4.2 *)
+let skew tr =
+	match tr with
+		| Node (lvl, v, Node (llvl, lv, ll, lr), r) when lvl = llvl ->
+			Node (lvl, lv, ll, Node (lvl, v, lr, r))
+		| _ -> tr
+
+let level = function
+	| Leaf -> 0
+	| Node (lvl, _, _, _) -> lvl
+	
+let split tr =
+	match tr with
+		| Node (lvl, v, l, Node (lvl2, v2, l2, r2))
+			when (lvl = lvl2) && (lvl = level r2) ->
+				Node (lvl + 1, v2, Node (lvl, v, l, l2), r2)
+		| _ -> tr
+
+
+(* 4.3 *)
+let rec insert item t =
+	match t with
+		| Leaf -> Node (1, item, Leaf, Leaf)
+		| Node (_, v, _, _) when item = v -> t
+		| Node (lvl, v, l, r) when item < v ->
+			split (skew (Node (lvl, v, insert item l, r)))
+		| Node (lvl, v, l, r) ->
+			split (skew (Node (lvl, v, l, insert item r)))

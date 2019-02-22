@@ -1,0 +1,24 @@
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:0:Problem 2.1: split3 is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:2:Problem 2.2: smallest_index is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:4:Problem 2.2: block_sort1 is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:6:Problem 3.1: linrec insert_r.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:6:Problem 3.1: linrec insert_r is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:6:Problem 3.1: linrec insert_r.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:7:Problem 3.1: linrec insertion sort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:7:Problem 3.1: linrec insertion sort is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:7:Problem 3.1: linrec insertion sort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:8:Problem 3.2: binrec quicksort is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:10:Problem 3.3: tailrec insertion_sort_i is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:14:Problem 4.3: insert is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:14:Problem 4.3: insert.

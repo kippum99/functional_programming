@@ -1,0 +1,156 @@
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Runner: processes
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Chooser: simple
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration suite_name = "all"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration cache_filename = "/Users/junekim/Documents/Caltech/CS 4/Midterm/oUnit-$(suite_name).cache"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration display = "true"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration results_style_1_X = "false"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration verbose = "false"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration health_check_interval = "1."
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration testdata_dir = "none"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration chooser = "simple"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration output_html_dir = "none"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration processes_kill_period = "5."
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration runner = "processes"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration shards = "2"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration processes_grace_period = "5."
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration log_encoding = "utf-8"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration output_junit_file = "none"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Configuration output_file = "/Users/junekim/Documents/Caltech/CS 4/Midterm/oUnit-$(suite_name)-$(shard_id).log"
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Using 2 workers maximum.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Starting worker number Junes-MacBook-Pro.local#01.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Worker Junes-MacBook-Pro.local#01 started.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Starting worker number Junes-MacBook-Pro.local#02.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Worker Junes-MacBook-Pro.local#02 started.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:1:Problem 2.1: merge3, all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:1:Problem 2.1: merge3, all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:0:Problem 2.1: split3 is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:1:Problem 2.1: merge3, all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:1:Problem 2.1: merge3, all:0:Problem 2.1: split3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:2:Problem 2.2: smallest_index, all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:2:Problem 2.2: smallest_index, all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:1:Problem 2.1: merge3 is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:2:Problem 2.2: smallest_index, all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:2:Problem 2.2: smallest_index, all:1:Problem 2.1: merge3.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:2:Problem 2.2: smallest_index is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:3:Problem 2.2: flip_n, all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:3:Problem 2.2: flip_n, all:2:Problem 2.2: smallest_index.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:4:Problem 2.2: block_sort1, all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:4:Problem 2.2: block_sort1, all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:3:Problem 2.2: flip_n is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:4:Problem 2.2: block_sort1, all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:4:Problem 2.2: block_sort1, all:3:Problem 2.2: flip_n.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:5:Problem 2.2: block_sorti, all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:4:Problem 2.2: block_sort1 is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:5:Problem 2.2: block_sorti, all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:5:Problem 2.2: block_sorti, all:4:Problem 2.2: block_sort1.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:6:Problem 3.1: linrec insert_r, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:6:Problem 3.1: linrec insert_r.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:6:Problem 3.1: linrec insert_r, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:6:Problem 3.1: linrec insert_r is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:6:Problem 3.1: linrec insert_r, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:6:Problem 3.1: linrec insert_r.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:6:Problem 3.1: linrec insert_r, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:7:Problem 3.1: linrec insertion sort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:7:Problem 3.1: linrec insertion sort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:7:Problem 3.1: linrec insertion sort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:7:Problem 3.1: linrec insertion sort is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:7:Problem 3.1: linrec insertion sort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:7:Problem 3.1: linrec insertion sort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:7:Problem 3.1: linrec insertion sort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:8:Problem 3.2: binrec quicksort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:8:Problem 3.2: binrec quicksort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:5:Problem 2.2: block_sorti is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:8:Problem 3.2: binrec quicksort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:8:Problem 3.2: binrec quicksort, all:5:Problem 2.2: block_sorti.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:9:Problem 3.3: tailrec insert_i, all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:9:Problem 3.3: tailrec insert_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:9:Problem 3.3: tailrec insert_i, all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:8:Problem 3.2: binrec quicksort is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:9:Problem 3.3: tailrec insert_i, all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:9:Problem 3.3: tailrec insert_i, all:8:Problem 3.2: binrec quicksort.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:9:Problem 3.3: tailrec insert_i is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:10:Problem 3.3: tailrec insertion_sort_i, all:9:Problem 3.3: tailrec insert_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:9:Problem 3.3: tailrec insert_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:10:Problem 3.3: tailrec insertion_sort_i, all:9:Problem 3.3: tailrec insert_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:11:Problem 4.1: member, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:11:Problem 4.1: member.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:11:Problem 4.1: member, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:11:Problem 4.1: member is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:11:Problem 4.1: member, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:11:Problem 4.1: member.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:11:Problem 4.1: member, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:12:Problem 4.2: skew, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:12:Problem 4.2: skew.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:12:Problem 4.2: skew, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:12:Problem 4.2: skew is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:12:Problem 4.2: skew, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:12:Problem 4.2: skew.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:12:Problem 4.2: skew, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:13:Problem 4.2: split, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Start test all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:13:Problem 4.2: split, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:10:Problem 3.3: tailrec insertion_sort_i is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:13:Problem 4.2: split, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:13:Problem 4.2: split, all:10:Problem 3.3: tailrec insertion_sort_i.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: Test all:13:Problem 4.2: split is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Still 2 tests running : all:14:Problem 4.3: insert, all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:14:Problem 4.3: insert, all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#02 I: End test all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Start test all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Still 2 tests running : all:14:Problem 4.3: insert, all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 2 tests running: all:14:Problem 4.3: insert, all:13:Problem 4.2: split.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Still 1 tests running : all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 1 tests running: all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: Test all:14:Problem 4.3: insert is successful.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Still 1 tests running : all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 1 tests running: all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#01 I: End test all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Still 1 tests running : all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 1 tests running: all:14:Problem 4.3: insert.
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: 0 tests running: .
+2019-02-22T12:12:49+00:00 Junes-MacBook-Pro.local#00 I: Worker Junes-MacBook-Pro.local#02 has ended.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Worker Junes-MacBook-Pro.local#01 has ended.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Used 2 worker during test execution.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Run 8 tests with shard Junes-MacBook-Pro.local#01.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Run 7 tests with shard Junes-MacBook-Pro.local#02.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: ==============
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Summary:
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:14:Problem 4.3: insert is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:13:Problem 4.2: split is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:10:Problem 3.3: tailrec insertion_sort_i is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:12:Problem 4.2: skew is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:11:Problem 4.1: member is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:9:Problem 3.3: tailrec insert_i is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:8:Problem 3.2: binrec quicksort is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:5:Problem 2.2: block_sorti is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:7:Problem 3.1: linrec insertion sort is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:6:Problem 3.1: linrec insert_r is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:4:Problem 2.2: block_sort1 is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:3:Problem 2.2: flip_n is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:2:Problem 2.2: smallest_index is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:1:Problem 2.1: merge3 is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Test all:0:Problem 2.1: split3 is successful.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Ran: 15 tests in: 0.12 seconds.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Cases: 15.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Tried: 15.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Errors: 0.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Failures: 0.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Skip: 0.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Todo: 0.
+2019-02-22T12:12:50+00:00 Junes-MacBook-Pro.local#00 I: Timeout: 0.
