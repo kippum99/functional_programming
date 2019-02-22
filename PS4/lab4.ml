@@ -93,10 +93,10 @@ type tree = Tree of elem list
 and elem = Num of int | Sub of tree
 
 let rec square_tree (Tree lst) =
-	let square_list = function
+	let rec square_list = function
 		| [] -> []
-		| (Num i) :: t -> (Num (i * i)) :: t
-		| (Sub tr) :: t -> (Sub (square_tree tr)) :: t
+		| (Num i) :: t -> (Num (i * i)) :: square_list t
+		| (Sub tr) :: t -> (Sub (square_tree tr)) :: square_list t
 	in
 		Tree (square_list lst)
 
@@ -260,8 +260,8 @@ let rec simplify1 expr =
 			| Mul (Int 0, _) 
 			| Mul (_, Int 0) -> Int 0
 			| Pow (e, 0) -> Int 1
-			| Add (e1, e2)
-			| Mul (e1, e2) -> Add (simplify1 e1, simplify1 e2)
+			| Add (e1, e2) -> Add (simplify1 e1, simplify1 e2)
+			| Mul (e1, e2) -> Mul (simplify1 e1, simplify1 e2)
 			| Pow (e, i) -> Pow (simplify1 e, i)
 
 
