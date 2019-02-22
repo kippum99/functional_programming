@@ -129,6 +129,84 @@ let block_sorti lst =
 		iter lst []
 
 
-(* 3.1 *)
+(* 3.1.a *)
+let linrec is_base on_base splitter combine =
+	let rec f x =
+		if is_base x then
+			on_base x
+		else
+			let (a, b) = splitter x in
+				combine a (f b)
+	in f
+
+(* 3.1.b *)
+let insert_r item =
+	let is_base lst = lst = [] || item <= List.hd lst in
+	let on_base lst = item :: lst in
+	let splitter lst = (List.hd lst, List.tl lst) in
+	let combine first rest_after_rec = first :: rest_after_rec in
+		linrec is_base on_base splitter combine
+
+(* 3.1.c *)
+let insertion_sort =
+	let is_base lst = lst = [] in
+	let on_base _ = [] in
+	let splitter lst = (List.hd lst, List.tl lst) in
+	let combine first rest_after_rec = insert_r first rest_after_rec in
+		linrec is_base on_base splitter combine
 
 
+(* 3.2.a *)
+let binrec is_base on_base splitter combine =
+	let rec f x =
+		if is_base x then
+			on_base x
+		else
+			let (a, b, c) = splitter x in
+				combine a (f b) (f c)
+	in f
+	
+(* 3.2.b *)
+let quicksort =
+	let is_base lst = lst = [] in
+	let on_base _ = [] in
+	let splitter lst =
+		match lst with
+			| [] -> invalid_arg "quicksort: can't split"
+			| h :: t ->
+				let is_lt x = x < h in
+				let is_ge x = x >= h in
+					(h, List.filter is_lt t, List.filter is_ge t)
+	in
+	let combine pivot lt ge = lt @ (pivot :: ge) in
+		binrec is_base on_base splitter combine
+
+
+(* 3.3.a *)
+let tailrec is_base on_base next =
+	let rec f inputs =
+		if is_base inputs then
+			on_base inputs
+		else f (next inputs)
+	in f
+
+(* 3.3.b *)
+let insert_i item lst =
+	let is_base (_, rest) = rest = [] || item <= List.hd rest in
+	let on_base (prev, rest) = prev @ (item :: rest) in
+	let next (prev, rest) = (prev @ [List.hd rest], List.tl rest) in
+	let iter = tailrec is_base on_base next in
+		iter ([], lst)
+		
+(* 3.3.c *)
+let insertion_sort_i lst =
+	let is_base (_, rest) = rest = [] in
+	let on_base (prev, _) = prev in
+	let next (prev, rest) = 
+		(insert_i (List.hd rest) prev, List.tl rest)
+	in
+	let iter = tailrec is_base on_base next in
+		iter ([], lst)
+
+
+(*
