@@ -97,6 +97,7 @@ unit types.
 
 (* C.1 *)
 let rec make_gram g =
+	let grams_per_slug = 14593.903203 in
 	let compatible_method other =
 		match other#unit_type with
 			| `Gram -> true
