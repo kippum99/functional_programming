@@ -1,3 +1,9 @@
-2019-03-14T07:49:01+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:1:compare tests.
-2019-03-14T07:49:01+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:1:compare tests is successful.
-2019-03-14T07:49:01+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:1:compare tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:1:compare tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:1:compare tests is successful.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:1:compare tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:3:add tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:3:add tests is successful.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:3:add tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:5:make_move tests.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:5:make_move tests is successful.
+2019-03-14T10:25:59+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:5:make_move tests.

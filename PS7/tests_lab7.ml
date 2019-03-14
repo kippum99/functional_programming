@@ -463,7 +463,7 @@ let all_tests = "all_tests" >:::
      expect_opposite 17 boards.(0) boards.(1);
      expect_opposite 18 boards.(0) empty_board;
   );
-(*
+
   "remove tests" >:: (fun c ->
      expect_remove 0 boards.(0) 'a' board0_minus_a;
      expect_remove 1 boards.(0) 'b' board0_minus_b;
@@ -534,7 +534,7 @@ let all_tests = "all_tests" >:::
      expect_nexts 11 test_board9  test_next_test_board9;
      expect_nexts 12 test_board10 test_next_test_board10;
   );
-*)
+
 ]
 
 let run_tests () = 
