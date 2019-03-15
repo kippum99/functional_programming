@@ -27,30 +27,30 @@ module Search (S : Storage) (D : Domain) =
     module DS = Set.Make(D)
 
     let search init = 
-			let storage = S.create () in
-			let rec iter visited =
-				if S.is_empty storage
-					then raise Not_found
-					else 
-						let next_history = S.pop storage in
-						let recent_board = List.hd next_history in
-							if DS.mem recent_board visited
-								then iter visited
-								else
-									if D.is_solved recent_board
-										then next_history
-										else
-											(* Helper function that generates a history and
-											 * pushes onto storage *)
-											let push_history b =
-												let history = b :: next_history in
-													S.push history storage
-											in
-												List.iter push_history (D.next recent_board);
-												iter (DS.add recent_board visited)	
-			in
-				S.push [init] storage;
-				iter DS.empty 
+      let storage = S.create () in
+      let rec iter visited =
+        if S.is_empty storage
+          then raise Not_found
+          else 
+            let next_history = S.pop storage in
+            let recent_board = List.hd next_history in
+              if DS.mem recent_board visited
+                then iter visited
+                else
+                  if D.is_solved recent_board
+                    then next_history
+                    else
+                      (* Helper function that generates a history and
+                       * pushes onto storage *)
+                      let push_history b =
+                        let history = b :: next_history in
+                          S.push history storage
+                      in
+                        List.iter push_history (D.next recent_board);
+                        iter (DS.add recent_board visited)  
+      in
+        S.push [init] storage;
+        iter DS.empty 
 
     let show_history hist =
       (String.concat "\n----\n\n" (List.map D.show (List.rev hist))) ^ "\n"
