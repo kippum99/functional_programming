@@ -27,16 +27,19 @@ module Search (S : Storage) (D : Domain) =
     module DS = Set.Make(D)
 
     let search init = 
+	  (* Create a new Storage structure to store board histories *)
       let storage = S.create () in
+      (* Keep searching until storage is empty or solution is found *)
       let rec iter visited =
         if S.is_empty storage
           then raise Not_found
           else 
             let next_history = S.pop storage in
             let recent_board = List.hd next_history in
-              if DS.mem recent_board visited
+              if DS.mem recent_board visited (* if already seen *)
                 then iter visited
                 else
+				  (* If the board solves the problem, return history *)
                   if D.is_solved recent_board
                     then next_history
                     else
@@ -46,11 +49,15 @@ module Search (S : Storage) (D : Domain) =
                         let history = b :: next_history in
                           S.push history storage
                       in
+					    (* Update visited, storage, and keep searching 
+						 *)
                         List.iter push_history (D.next recent_board);
                         iter (DS.add recent_board visited)  
       in
+		(* Create a history with just the initial board and push onto
+		 * storage *)
         S.push [init] storage;
-        iter DS.empty 
+        iter DS.empty (* set of visited boards is initially empty *)
 
     let show_history hist =
       (String.concat "\n----\n\n" (List.map D.show (List.rev hist))) ^ "\n"
