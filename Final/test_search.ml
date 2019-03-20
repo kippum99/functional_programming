@@ -36,7 +36,6 @@ let all_tests = "all_tests" >:::
   "search" >:: (fun _ ->
       begin
         (* 3x3 board has no solution. *)
-
         assert_bool "3x3 (0, 0), imp" (not (TI.run_search 3 3 0 0 10));
         assert_bool "3x3 (0, 0), fun" (not (TF.run_search 3 3 0 0 10));
 
@@ -94,7 +93,6 @@ let all_tests = "all_tests" >:::
 
         assert_bool "50x50 (0, 0), imp" (TI.run_search 50 50 0 0 50);
         assert_bool "50x50 (0, 0), fun" (TF.run_search 50 50 0 0 50);
-
         assert_bool "100x100 (0, 0), imp" (TI.run_search 100 100 0 0 100);
         assert_bool "100x100 (0, 0), fun" (TF.run_search 100 100 0 0 100);
       end
@@ -105,6 +103,7 @@ let all_tests = "all_tests" >:::
 let run_tests () = 
   begin
     Printf.printf "\nRUNNING SEARCH TESTS...\n\n";
+    Random.self_init ();
     run_test_tt_main all_tests;
   end
 

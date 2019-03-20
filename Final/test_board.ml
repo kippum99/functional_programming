@@ -429,7 +429,7 @@ let all_tests = "all_tests" >:::
             loc_int_list_3_4_3_2_0);
      end
   );
-
+(*
   "place: bad input" >:: (fun _ ->
      begin
        expect_invalid_arg "bad place 1i" 
@@ -1021,7 +1021,7 @@ let all_tests = "all_tests" >:::
 
      end
   );
-
+*)
 ]
 
 let run_tests () = 
