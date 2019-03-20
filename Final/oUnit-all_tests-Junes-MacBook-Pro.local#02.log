@@ -1,3 +1,12 @@
-2019-03-20T10:07:11+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:1:make: init_reachable.
-2019-03-20T10:07:11+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:1:make: init_reachable is successful.
-2019-03-20T10:07:11+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:1:make: init_reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:1:make: init_reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:1:make: init_reachable is successful.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:1:make: init_reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:3:get_loc_counts_from_loc.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:3:get_loc_counts_from_loc is successful.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:3:get_loc_counts_from_loc.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:6:place: reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:6:place: reachable is successful.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:6:place: reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:8:undo: reachable.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:8:undo: reachable is successful.
+2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:8:undo: reachable.
