@@ -1,15 +1,3 @@
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:0:make: invalid args.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:0:make: invalid args is successful.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:0:make: invalid args.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:2:get_loc_counts_from_loc: bad input.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:2:get_loc_counts_from_loc: bad input is successful.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:2:get_loc_counts_from_loc: bad input.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:4:place: bad input.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:4:place: bad input is successful.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:4:place: bad input.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:5:place: indices.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:5:place: indices is successful.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:5:place: indices.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:7:undo: indices.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:7:undo: indices is successful.
-2019-03-20T11:57:52+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:7:undo: indices.
+2019-03-20T13:14:11+00:00 Junes-MacBook-Pro.local#01 I: Start test all_tests:0:search.
+2019-03-20T13:14:12+00:00 Junes-MacBook-Pro.local#01 I: Test all_tests:0:search is successful.
+2019-03-20T13:14:12+00:00 Junes-MacBook-Pro.local#01 I: End test all_tests:0:search.
