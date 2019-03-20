@@ -1,0 +1,6 @@
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:1:set/get.
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:1:set/get is successful.
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:1:set/get.
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: Start test all_tests:3:remove/has_loc.
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: Test all_tests:3:remove/has_loc is successful.
+2019-03-20T06:38:24+00:00 Junes-MacBook-Pro.local#02 I: End test all_tests:3:remove/has_loc.
